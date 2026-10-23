@@ -267,23 +267,39 @@
         </div>
     </footer>
 
-    <!-- ADMIN EDITOR MODAL (Direct access) -->
+    <!-- ADMIN MODAL & LOGIN OVERLAY -->
     <div id="adminModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="glass-panel p-8 rounded-2xl max-w-md w-full border border-purple-500/50 shadow-2xl relative">
             <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">&times;</button>
-            <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-bold text-purple-300" data-i18n="admin_editor_title">Панель Администратора</h3>
-                <span class="text-xs text-green-400 font-mono px-2 py-0.5 rounded bg-green-900/30">ONLINE</span>
+            
+            <!-- Login View -->
+            <div id="adminLoginView">
+                <h3 class="text-2xl font-bold mb-2 text-purple-300" data-i18n="admin_login_title">Вход для Администратора</h3>
+                <p class="text-xs text-gray-400 mb-6" data-i18n="admin_login_subtitle">Введите пароль для доступа к изменению скрипта.</p>
+                <input type="password" id="adminPasswordInput" placeholder="Пароль..." class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 mb-4 font-mono">
+                <button onclick="handleAdminLogin()" class="neon-btn w-full py-3 rounded-xl font-bold text-sm text-white shadow-lg" data-i18n="admin_login_btn">Войти</button>
+                <p id="loginError" class="text-xs text-red-400 mt-3 text-center hidden" data-i18n="admin_login_error">Неверный пароль!</p>
             </div>
-            <p class="text-xs text-gray-400 mb-3" data-i18n="admin_editor_subtitle">Измените Lua-скрипт и нажмите сохранить:</p>
-            <textarea id="scriptTextarea" rows="5" class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl p-3 text-xs text-purple-300 font-mono focus:outline-none focus:border-purple-500 mb-4 resize-none"></textarea>
-            <button onclick="saveNewScript()" class="neon-btn w-full py-3 rounded-xl font-bold text-xs text-white shadow-lg" data-i18n="admin_save_btn">Сохранить изменения</button>
+
+            <!-- Editor View -->
+            <div id="adminEditorView" class="hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold text-purple-300" data-i18n="admin_editor_title">Панель Администратора</h3>
+                    <span class="text-xs text-green-400 font-mono px-2 py-0.5 rounded bg-green-900/30">ONLINE</span>
+                </div>
+                <p class="text-xs text-gray-400 mb-3" data-i18n="admin_editor_subtitle">Измените Lua-скрипт и нажмите сохранить:</p>
+                <textarea id="scriptTextarea" rows="5" class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl p-3 text-xs text-purple-300 font-mono focus:outline-none focus:border-purple-500 mb-4 resize-none"></textarea>
+                <div class="flex space-x-3">
+                    <button onclick="saveNewScript()" class="neon-btn flex-1 py-3 rounded-xl font-bold text-xs text-white shadow-lg" data-i18n="admin_save_btn">Сохранить</button>
+                    <button onclick="logoutAdmin()" class="px-4 py-3 rounded-xl bg-red-950/40 hover:bg-red-900/50 border border-red-500/30 text-xs text-red-300 font-semibold" data-i18n="admin_logout_btn">Выйти</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- JavaScript -->
     <script>
-        // Default Script (Saved in localStorage)
+        // Default Script
         let currentScript = localStorage.getItem('gento_custom_script') || 'loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/feb565f0a68222c6082c6048f78e6997/raw/9eb17d9800dc74772786d7238a2b50a8d1df2131/GentoHub%2520Full"))()';
         document.getElementById('displayScriptCode').innerText = currentScript;
 
@@ -348,14 +364,45 @@
             }, 2000);
         }
 
-        // Admin Panel Logic (Direct Open)
+        // Admin Panel & Session Logic
         function openAdminModal() {
             document.getElementById('adminModal').classList.remove('hidden');
-            document.getElementById('scriptTextarea').value = currentScript;
+            const isAdminLoggedIn = sessionStorage.getItem('gento_admin_logged') === 'true';
+            if (isAdminLoggedIn) {
+                document.getElementById('adminLoginView').classList.add('hidden');
+                document.getElementById('adminEditorView').classList.remove('hidden');
+                document.getElementById('scriptTextarea').value = currentScript;
+            } else {
+                document.getElementById('adminLoginView').classList.remove('hidden');
+                document.getElementById('adminEditorView').classList.add('hidden');
+                document.getElementById('adminPasswordInput').value = '';
+                document.getElementById('loginError').classList.add('hidden');
+            }
         }
 
         function closeAdminModal() {
             document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function handleAdminLogin() {
+            const pass = document.getElementById('adminPasswordInput').value;
+            // Новый пароль администратора
+            if (pass === 'AAGGVVHLFKWS656') {
+                sessionStorage.setItem('gento_admin_logged', 'true');
+                document.getElementById('adminLoginView').classList.add('hidden');
+                document.getElementById('adminEditorView').classList.remove('hidden');
+                document.getElementById('scriptTextarea').value = currentScript;
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function logoutAdmin() {
+            sessionStorage.removeItem('gento_admin_logged');
+            document.getElementById('adminEditorView').classList.add('hidden');
+            document.getElementById('adminLoginView').classList.remove('hidden');
+            document.getElementById('adminPasswordInput').value = '';
+            document.getElementById('loginError').classList.add('hidden');
         }
 
         function saveNewScript() {
@@ -435,9 +482,14 @@
                 rm_2_desc: "Конструктор пользовательских скриптов и нейросетевых агентов.",
                 rm_3_title: "Global Mesh Nodes",
                 rm_3_desc: "Расширение точек присутствия в Азии и Латинской Америке.",
+                admin_login_title: "Вход для Администратора",
+                admin_login_subtitle: "Введите пароль для доступа к панели.",
+                admin_login_btn: "Войти",
+                admin_login_error: "Неверный пароль!",
                 admin_editor_title: "Панель Администратора",
                 admin_editor_subtitle: "Измените Lua-скрипт и нажмите сохранить:",
-                admin_save_btn: "Сохранить изменения"
+                admin_save_btn: "Сохранить",
+                admin_logout_btn: "Выйти"
             },
             en: {
                 nav_services: "Services",
@@ -479,9 +531,14 @@
                 rm_2_desc: "Custom script builder and neural network agents constructor.",
                 rm_3_title: "Global Mesh Nodes",
                 rm_3_desc: "Expanding points of presence in Asia and Latin America.",
+                admin_login_title: "Admin Login",
+                admin_login_subtitle: "Enter password to access panel.",
+                admin_login_btn: "Login",
+                admin_login_error: "Incorrect password!",
                 admin_editor_title: "Admin Panel",
                 admin_editor_subtitle: "Modify Lua script and save changes:",
-                admin_save_btn: "Save Changes"
+                admin_save_btn: "Save",
+                admin_logout_btn: "Logout"
             }
         };
 
