@@ -275,7 +275,7 @@
             <!-- Login View -->
             <div id="adminLoginView">
                 <h3 class="text-2xl font-bold mb-2 text-purple-300" data-i18n="admin_login_title">Вход для Администратора</h3>
-                <p class="text-xs text-gray-400 mb-6" data-i18n="admin_login_subtitle">Введите пароль для доступа к изменению скрипта.</p>
+                <p class="text-xs text-gray-400 mb-6" data-i18n="admin_login_subtitle">Введите пароль для доступа к панели.</p>
                 <input type="password" id="adminPasswordInput" placeholder="Пароль..." class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 mb-4 font-mono">
                 <button onclick="handleAdminLogin()" class="neon-btn w-full py-3 rounded-xl font-bold text-sm text-white shadow-lg" data-i18n="admin_login_btn">Войти</button>
                 <p id="loginError" class="text-xs text-red-400 mt-3 text-center hidden" data-i18n="admin_login_error">Неверный пароль!</p>
@@ -386,7 +386,7 @@
 
         function handleAdminLogin() {
             const pass = document.getElementById('adminPasswordInput').value;
-            // Новый пароль администратора
+            // Обновленный пароль администратора
             if (pass === 'AAGGVVHLFKWS656') {
                 sessionStorage.setItem('gento_admin_logged', 'true');
                 document.getElementById('adminLoginView').classList.add('hidden');
@@ -403,6 +403,7 @@
             document.getElementById('adminLoginView').classList.remove('hidden');
             document.getElementById('adminPasswordInput').value = '';
             document.getElementById('loginError').classList.add('hidden');
+            closeAdminModal();
         }
 
         function saveNewScript() {
