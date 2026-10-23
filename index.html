@@ -267,7 +267,7 @@
         </div>
     </footer>
 
-    <!-- ADMIN EDITOR MODAL (Direct access) -->
+    <!-- ADMIN MODAL (Direct access & saved session) -->
     <div id="adminModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="glass-panel p-8 rounded-2xl max-w-md w-full border border-purple-500/50 shadow-2xl relative">
             <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">&times;</button>
@@ -277,13 +277,16 @@
             </div>
             <p class="text-xs text-gray-400 mb-3" data-i18n="admin_editor_subtitle">Измените Lua-скрипт и нажмите сохранить:</p>
             <textarea id="scriptTextarea" rows="5" class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl p-3 text-xs text-purple-300 font-mono focus:outline-none focus:border-purple-500 mb-4 resize-none"></textarea>
-            <button onclick="saveNewScript()" class="neon-btn w-full py-3 rounded-xl font-bold text-xs text-white shadow-lg" data-i18n="admin_save_btn">Сохранить изменения</button>
+            <div class="flex space-x-3">
+                <button onclick="saveNewScript()" class="neon-btn flex-1 py-3 rounded-xl font-bold text-xs text-white shadow-lg" data-i18n="admin_save_btn">Сохранить изменения</button>
+                <button onclick="logoutAdmin()" class="px-4 py-3 rounded-xl bg-red-950/40 hover:bg-red-900/50 border border-red-500/30 text-xs text-red-300 font-semibold" data-i18n="admin_logout_btn">Выйти</button>
+            </div>
         </div>
     </div>
 
     <!-- JavaScript -->
     <script>
-        // Default Script
+        // Default Script (Saved in localStorage)
         let currentScript = localStorage.getItem('gento_custom_script') || 'loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/feb565f0a68222c6082c6048f78e6997/raw/9eb17d9800dc74772786d7238a2b50a8d1df2131/GentoHub%2520Full"))()';
         document.getElementById('displayScriptCode').innerText = currentScript;
 
@@ -348,14 +351,20 @@
             }, 2000);
         }
 
-        // Admin Panel Logic (Direct Open)
+        // Admin Panel Logic (Permanently saved in localStorage)
         function openAdminModal() {
             document.getElementById('adminModal').classList.remove('hidden');
             document.getElementById('scriptTextarea').value = currentScript;
+            localStorage.setItem('gento_admin_active', 'true');
         }
 
         function closeAdminModal() {
             document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem('gento_admin_active');
+            closeAdminModal();
         }
 
         function saveNewScript() {
@@ -368,6 +377,13 @@
                 closeAdminModal();
             }
         }
+
+        // Auto-open admin panel if it was active last time
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('gento_admin_active') === 'true') {
+                // Если хочешь чтобы модалка сама не открывалась при перезагрузке, а просто запоминала статус, можешь убрать эту строчку ниже.
+            }
+        });
 
         // Dashboard Bars Simulation
         const chartBars = document.getElementById('chartBars');
@@ -437,7 +453,8 @@
                 rm_3_desc: "Расширение точек присутствия в Азии и Латинской Америке.",
                 admin_editor_title: "Панель Администратора",
                 admin_editor_subtitle: "Измените Lua-скрипт и нажмите сохранить:",
-                admin_save_btn: "Сохранить изменения"
+                admin_save_btn: "Сохранить изменения",
+                admin_logout_btn: "Закрыть"
             },
             en: {
                 nav_services: "Services",
@@ -481,7 +498,8 @@
                 rm_3_desc: "Expanding points of presence in Asia and Latin America.",
                 admin_editor_title: "Admin Panel",
                 admin_editor_subtitle: "Modify Lua script and save changes:",
-                admin_save_btn: "Save Changes"
+                admin_save_btn: "Save Changes",
+                admin_logout_btn: "Close"
             }
         };
 
