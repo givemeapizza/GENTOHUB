@@ -61,8 +61,8 @@
                 <a href="#services" class="hover:text-purple-400 transition" data-i18n="nav_services">Сервисы</a>
                 <a href="#dashboard" class="hover:text-purple-400 transition" data-i18n="nav_dashboard">Дашборд</a>
                 <a href="#scripts" class="hover:text-purple-400 transition" data-i18n="nav_scripts">Скрипты</a>
+                <a href="#keySystem" class="hover:text-purple-400 transition" data-i18n="nav_keys">Получить ключ</a>
                 <a href="#roadmap" class="hover:text-purple-400 transition" data-i18n="nav_roadmap">Дорожная карта</a>
-                <a href="#community" class="hover:text-purple-400 transition" data-i18n="nav_community">Сообщество</a>
             </nav>
 
             <!-- Right Controls -->
@@ -98,8 +98,8 @@
                 <a href="#scripts" class="neon-btn w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base text-white shadow-xl text-center" data-i18n="hero_btn_primary">
                     Перейти к скриптам
                 </a>
-                <a href="#dashboard" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base glass-panel hover:bg-purple-900/20 transition text-center" data-i18n="hero_btn_secondary">
-                    Открыть дашборд
+                <a href="#keySystem" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base glass-panel hover:bg-purple-900/20 transition text-center" data-i18n="hero_btn_secondary">
+                    Получить ключ
                 </a>
             </div>
         </div>
@@ -201,6 +201,60 @@
                             <span data-i18n="ai_desc">Сделано с ИИ / Вайбкодинг</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Key System Section (2 Ads for 1 Key) -->
+    <section id="keySystem" class="py-20 px-6 relative z-10">
+        <div class="max-w-xl mx-auto">
+            <div class="glass-panel p-8 rounded-3xl border border-purple-500/40 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center mb-6">
+                    <span class="text-xs font-mono text-purple-400 uppercase tracking-widest px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30">Secure Access</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-3 text-white">Получение Ключа (Gento Demo)</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Посмотрите 2 рекламы, чтобы разблокировать ключ доступа.</p>
+                </div>
+
+                <!-- Status / Counter -->
+                <div class="bg-[#05070c] p-4 rounded-xl border border-purple-900/40 mb-6 flex items-center justify-between">
+                    <div>
+                        <div class="text-xs text-gray-400 font-mono">Просмотрено реклам:</div>
+                        <div id="adCounterText" class="text-lg font-bold text-purple-300 font-mono">0 / 2</div>
+                    </div>
+                    <div id="adStatusBadge" class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-mono border border-yellow-500/30">
+                        Нужно еще 2 рекламы
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <button onclick="watchAd()" id="watchAdBtn" class="neon-btn w-full py-4 rounded-xl font-bold text-sm text-white shadow-lg mb-4 flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span id="watchBtnText">Смотреть рекламу (1/2)</span>
+                </button>
+
+                <!-- Result Key Box -->
+                <div id="keyResultBox" class="hidden mb-4">
+                    <label class="block text-xs font-mono text-emerald-400 mb-1">Ваш ключ доступа:</label>
+                    <div class="flex items-center space-x-2">
+                        <input type="text" id="generatedKeyInput" readonly class="w-full bg-[#05070c] border border-emerald-500/50 rounded-xl px-4 py-3 text-sm text-emerald-300 font-mono focus:outline-none">
+                        <button onclick="copyGeneratedKey()" class="px-4 py-3 bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-300 text-xs font-semibold rounded-xl transition">Копировать</button>
+                    </div>
+                </div>
+
+                <!-- Cooldown Warning -->
+                <div id="cooldownWarning" class="hidden text-center text-xs text-orange-400 font-mono mb-4 bg-orange-950/30 border border-orange-500/30 p-3 rounded-xl">
+                    ⏰ Кулдаун: Следующий ключ можно будет получить через 24 часа.
+                </div>
+
+                <!-- Discord Boost Note -->
+                <div class="pt-4 border-t border-gray-800 text-center">
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        ⚡ <span class="text-purple-300 font-medium">Мастер-ключ</span> можно получить мгновенно, если вы сделаете буст в наш Discord-сервер: 
+                        <a href="https://discord.gg/EDzvZnf6VJ" target="_blank" class="text-blue-400 underline hover:text-blue-300">https://discord.gg/EDzvZnf6VJ</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -346,6 +400,122 @@
 
         document.getElementById('displayScriptCode1').innerText = script1;
         document.getElementById('displayScriptCode2').innerText = script2;
+
+        // Valid Keys List (60 keys)
+        const VALID_KEYS = [
+            "GENTO-482910", "GENTO-159384", "GENTO-732045", "GENTO-918234", "GENTO-342156",
+            "GENTO-654789", "GENTO-123987", "GENTO-876543", "GENTO-543210", "GENTO-998877",
+            "GENTO-112233", "GENTO-445566", "GENTO-778899", "GENTO-102938", "GENTO-564738",
+            "GENTO-293847", "GENTO-847362", "GENTO-384756", "GENTO-748392", "GENTO-918273",
+            "GENTO-654321", "GENTO-135792", "GENTO-246813", "GENTO-357924", "GENTO-468135",
+            "GENTO-579246", "GENTO-681357", "GENTO-792468", "GENTO-813579", "GENTO-924681",
+            "GENTO-147258", "GENTO-369147", "GENTO-258369", "GENTO-741852", "GENTO-963258",
+            "GENTO-159753", "GENTO-357159", "GENTO-852963", "GENTO-951753", "GENTO-456123",
+            "GENTO-789123", "GENTO-321654", "GENTO-987654", "GENTO-111222", "GENTO-333444",
+            "GENTO-555666", "GENTO-777888", "GENTO-999000", "GENTO-123123", "GENTO-456456",
+            "GENTO-789789", "GENTO-147147", "GENTO-258258", "GENTO-369369", "GENTO-987987",
+            "GENTO-654654", "GENTO-321321", "GENTO-852852", "GENTO-963963", "GENTO-741741"
+        ];
+
+        // Web Ad & Key System State
+        let adWatchedCount = parseInt(localStorage.getItem('gento_ad_count') || '0');
+        let lastKeyTime = parseInt(localStorage.getItem('gento_last_key_time') || '0');
+        const cooldownTime = 24 * 60 * 60 * 1000; // 24 часа
+
+        function updateAdSystemUI() {
+            const now = new Date().getTime();
+            const timePassed = now - lastKeyTime;
+            
+            const counterText = document.getElementById('adCounterText');
+            const statusBadge = document.getElementById('adStatusBadge');
+            const watchBtnText = document.getElementById('watchBtnText');
+            const watchAdBtn = document.getElementById('watchAdBtn');
+            const keyResultBox = document.getElementById('keyResultBox');
+            const cooldownWarning = document.getElementById('cooldownWarning');
+
+            // Проверяем кулдаун 24 часа
+            if (lastKeyTime > 0 && timePassed < cooldownTime) {
+                const hoursLeft = Math.ceil((cooldownTime - timePassed) / (1000 * 60 * 60));
+                watchAdBtn.disabled = true;
+                watchAdBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                watchBtnText.innerText = 'Кулдаун активен';
+                statusBadge.innerText = `Доступ через ${hoursLeft}ч`;
+                statusBadge.className = 'px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-mono border border-orange-500/30';
+                cooldownWarning.classList.remove('hidden');
+                
+                // Показываем ранее полученный ключ
+                const savedKey = localStorage.getItem('gento_saved_key');
+                if (savedKey) {
+                    keyResultBox.classList.remove('hidden');
+                    document.getElementById('generatedKeyInput').value = savedKey;
+                }
+                return;
+            }
+
+            // Если кулдаун прошел или первый запуск
+            cooldownWarning.classList.add('hidden');
+            watchAdBtn.disabled = false;
+            watchAdBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+            if (adWatchedCount === 0) {
+                counterText.innerText = '0 / 2';
+                statusBadge.innerText = 'Нужно еще 2 рекламы';
+                statusBadge.className = 'px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-mono border border-yellow-500/30';
+                watchBtnText.innerText = 'Смотреть рекламу (1/2)';
+                keyResultBox.classList.add('hidden');
+            } else if (adWatchedCount === 1) {
+                counterText.innerText = '1 / 2';
+                statusBadge.innerText = 'Осталась 1 реклама!';
+                statusBadge.className = 'px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-mono border border-blue-500/30';
+                watchBtnText.innerText = 'Смотреть рекламу (2/2)';
+                keyResultBox.classList.add('hidden');
+            } else if (adWatchedCount >= 2) {
+                counterText.innerText = '2 / 2 (Готово)';
+                statusBadge.innerText = 'Ключ разблокирован!';
+                statusBadge.className = 'px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-xs font-mono border border-green-500/30';
+                watchBtnText.innerText = 'Ключ получен';
+                watchAdBtn.disabled = true;
+                watchAdBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                // Генерация случайного ключа
+                let generatedKey = localStorage.getItem('gento_saved_key');
+                if (!generatedKey) {
+                    generatedKey = VALID_KEYS[Math.floor(Math.random() * VALID_KEYS.length)];
+                    localStorage.setItem('gento_saved_key', generatedKey);
+                    lastKeyTime = new Date().getTime();
+                    localStorage.setItem('gento_last_key_time', lastKeyTime);
+                }
+
+                keyResultBox.classList.remove('hidden');
+                document.getElementById('generatedKeyInput').value = generatedKey;
+            }
+        }
+
+        function watchAd() {
+            if (adWatchedCount < 2) {
+                const watchAdBtn = document.getElementById('watchAdBtn');
+                const watchBtnText = document.getElementById('watchBtnText');
+                
+                watchAdBtn.disabled = true;
+                watchBtnText.innerText = 'Симуляция просмотра рекламы...';
+
+                setTimeout(() => {
+                    adWatchedCount++;
+                    localStorage.setItem('gento_ad_count', adWatchedCount);
+                    updateAdSystemUI();
+                }, 2500); // 2.5 секунды симуляция просмотра
+            }
+        }
+
+        function copyGeneratedKey() {
+            const keyInput = document.getElementById('generatedKeyInput');
+            keyInput.select();
+            navigator.clipboard.writeText(keyInput.value);
+            alert(currentLang === 'ru' ? 'Ключ скопирован в буфер обмена!' : 'Key copied to clipboard!');
+        }
+
+        // Инициализация при загрузке
+        updateAdSystemUI();
 
         // Canvas Background Animation
         const canvas = document.getElementById('bgCanvas');
@@ -500,8 +670,8 @@
                 nav_services: "Сервисы",
                 nav_dashboard: "Дашборд",
                 nav_scripts: "Скрипты",
+                nav_keys: "Получить ключ",
                 nav_roadmap: "Дорожная карта",
-                nav_community: "Сообщество",
                 nav_admin: "Админ",
                 nav_launch: "Запустить Hub",
                 hero_badge: "NEXT-GEN ECOSYSTEM & SCRIPT HUB V4.2",
@@ -509,7 +679,7 @@
                 hero_title_2: "мощных скриптов",
                 hero_desc: "Передовая облачная экосистема, инструменты разработки нового поколения и защищенный хаб игровых скриптов в единой ультрасовременной среде.",
                 hero_btn_primary: "Перейти к скриптам",
-                hero_btn_secondary: "Открыть дашборд",
+                hero_btn_secondary: "Получить ключ",
                 services_title: "Экосистема GENTO HUB",
                 services_subtitle: "Интегрированные модули для высокой производительности и автоматизации.",
                 srv_1_title: "GENTO Cloud Infrastructure",
@@ -548,8 +718,8 @@
                 nav_services: "Services",
                 nav_dashboard: "Dashboard",
                 nav_scripts: "Scripts",
+                nav_keys: "Get Key",
                 nav_roadmap: "Roadmap",
-                nav_community: "Community",
                 nav_admin: "Admin",
                 nav_launch: "Launch Hub",
                 hero_badge: "NEXT-GEN ECOSYSTEM & SCRIPT HUB V4.2",
@@ -557,7 +727,7 @@
                 hero_title_2: "Powerful Scripts",
                 hero_desc: "Advanced cloud ecosystem, next-generation development tools, and secure game script hub in a single ultramodern environment.",
                 hero_btn_primary: "Explore Scripts",
-                hero_btn_secondary: "Open Dashboard",
+                hero_btn_secondary: "Get Key",
                 services_title: "GENTO HUB Ecosystem",
                 services_subtitle: "Integrated modules for high performance and automation.",
                 srv_1_title: "GENTO Cloud Infrastructure",
