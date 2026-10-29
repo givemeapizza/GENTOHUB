@@ -28,7 +28,7 @@
         }
     </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #090D16; color: #F3F4F6; overflow-x: hidden; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #090D16; color: #F3F4F6; overflow-x: hidden; scroll-behavior: smooth; }
         .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(139, 92, 246, 0.2); transition: all 0.3s ease; }
         .glass-panel:hover { border-color: rgba(139, 92, 246, 0.5); box-shadow: 0 0 25px rgba(139, 92, 246, 0.15); }
         .neon-glow { text-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
@@ -56,26 +56,25 @@
                 <span class="text-xl sm:text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-300 to-blue-400">GENTO HUB</span>
             </div>
 
-            <!-- Compact Navigation Menu -->
+            <!-- Navigation Menu -->
             <nav class="hidden lg:flex items-center space-x-5 text-sm font-medium text-gray-300">
-                <a href="#services" class="hover:text-purple-400 transition" data-i18n="nav_services">Сервисы</a>
-                <a href="#dashboard" class="hover:text-purple-400 transition" data-i18n="nav_dashboard">Дашборд</a>
-                <a href="#scripts" class="hover:text-purple-400 transition" data-i18n="nav_scripts">Скрипты</a>
-                <a href="#keySystem" class="hover:text-purple-400 transition" data-i18n="nav_keys">Получить ключ</a>
-                <a href="#roadmap" class="hover:text-purple-400 transition" data-i18n="nav_roadmap">Дорожная карта</a>
+                <a href="#services" class="hover:text-purple-400 transition">Сервисы</a>
+                <a href="#scripts" class="hover:text-purple-400 transition">Скрипты</a>
+                <a href="#keySystem" class="text-purple-400 font-semibold hover:text-purple-300 transition flex items-center space-x-1">
+                    <span>🔑 Получить ключ</span>
+                </a>
+                <a href="#dashboard" class="hover:text-purple-400 transition">Дашборд</a>
+                <a href="#roadmap" class="hover:text-purple-400 transition">Дорожная карта</a>
             </nav>
 
             <!-- Right Controls -->
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <button onclick="openAdminModal()" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-purple-900/40 hover:bg-purple-800/60 border border-purple-500/40 text-xs font-semibold text-purple-300 flex items-center space-x-1 transition shadow-lg shadow-purple-950/50">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                    <span data-i18n="nav_admin">Админ</span>
+                    <span>Админ</span>
                 </button>
-                <button onclick="toggleLanguage()" class="px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg border border-purple-500/30 hover:bg-purple-600/20 text-xs font-mono font-semibold transition" id="langBtn">
-                    RU / EN
-                </button>
-                <a href="#scripts" class="neon-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-white shadow-lg hidden sm:inline-block" data-i18n="nav_launch">
-                    Запустить Hub
+                <a href="#keySystem" class="neon-btn px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-white shadow-lg hidden sm:inline-block">
+                    Получить ключ
                 </a>
             </div>
         </div>
@@ -86,20 +85,20 @@
         <div class="max-w-7xl mx-auto text-center">
             <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel border border-purple-500/40 text-purple-300 text-xs font-semibold mb-6 shadow-inner">
                 <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                <span data-i18n="hero_badge">NEXT-GEN ECOSYSTEM & SCRIPT HUB V4.2</span>
+                <span>NEXT-GEN ECOSYSTEM & SCRIPT HUB V4.2</span>
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
-                <span data-i18n="hero_title_1">Будущее цифровых решений и</span> <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 neon-glow" data-i18n="hero_title_2">мощных скриптов</span>
+                Будущее цифровых решений и <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 neon-glow">мощных скриптов</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-normal" data-i18n="hero_desc">
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-normal">
                 Передовая облачная экосистема, инструменты разработки нового поколения и защищенный хаб игровых скриптов в единой ультрасовременной среде.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#scripts" class="neon-btn w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base text-white shadow-xl text-center" data-i18n="hero_btn_primary">
+                <a href="#scripts" class="neon-btn w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base text-white shadow-xl text-center">
                     Перейти к скриптам
                 </a>
-                <a href="#keySystem" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base glass-panel hover:bg-purple-900/20 transition text-center" data-i18n="hero_btn_secondary">
-                    Получить ключ
+                <a href="#keySystem" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base glass-panel hover:bg-purple-900/20 transition text-center text-purple-300 border border-purple-500/40">
+                    🔑 Получить ключ (Новости вместо рекламы)
                 </a>
             </div>
         </div>
@@ -109,24 +108,24 @@
     <section id="services" class="py-20 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="services_title">Экосистема GENTO HUB</h2>
-                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base" data-i18n="services_subtitle">Интегрированные модули для высокой производительности и автоматизации.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Экосистема GENTO HUB</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base">Интегрированные модули для высокой производительности и автоматизации.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glass-panel p-8 rounded-2xl">
                     <div class="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center text-purple-400 mb-6 font-bold text-xl">01</div>
-                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_1_title">GENTO Cloud Infrastructure</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="srv_1_desc">Высокопроизводительные серверные кластеры с мгновенным развертыванием и защитой от DDoS.</p>
+                    <h3 class="text-xl font-bold mb-3">GENTO Cloud Infrastructure</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Высокопроизводительные серверные кластеры с мгновенным развертыванием и защитой от DDoS.</p>
                 </div>
                 <div class="glass-panel p-8 rounded-2xl">
                     <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-400 mb-6 font-bold text-xl">02</div>
-                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_2_title">AI Script Engine</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="srv_2_desc">Интеллектуальная система анализа кода, оптимизации сетевых запросов и генерации скриптов.</p>
+                    <h3 class="text-xl font-bold mb-3">AI Script Engine</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Интеллектуальная система анализа кода, оптимизации сетевых запросов и генерации скриптов.</p>
                 </div>
                 <div class="glass-panel p-8 rounded-2xl">
                     <div class="w-12 h-12 rounded-xl bg-emerald-600/20 flex items-center justify-center text-emerald-400 mb-6 font-bold text-xl">03</div>
-                    <h3 class="text-xl font-bold mb-3" data-i18n="srv_3_title">Secure Execution Hub</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="srv_3_desc">Проверенные скрипты для Roblox и других платформ с ежедневными обновлениями и обходом багов.</p>
+                    <h3 class="text-xl font-bold mb-3">Secure Execution Hub</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Проверенные скрипты для Roblox и других платформ с ежедневными обновлениями и обходом багов.</p>
                 </div>
             </div>
         </div>
@@ -136,8 +135,8 @@
     <section id="scripts" class="py-20 px-6 relative z-10 bg-black/20">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="scripts_main_title">Игровой Скрипт Хаб (Roblox / MM2)</h2>
-                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base" data-i18n="scripts_main_subtitle">Мгновенный запуск скриптов одной строкой.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Игровой Скрипт Хаб (Roblox / MM2)</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base">Мгновенный запуск скриптов одной строкой.</p>
             </div>
 
             <div class="space-y-10 max-w-4xl mx-auto">
@@ -152,7 +151,7 @@
                         </div>
                         <button onclick="copyScript(1)" id="copyBtn1" class="neon-btn px-4 py-2 rounded-lg text-xs font-semibold text-white flex items-center space-x-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-                            <span id="copyText1" data-i18n="copy_btn">Копировать скрипт</span>
+                            <span id="copyText1">Копировать скрипт</span>
                         </button>
                     </div>
                     
@@ -163,11 +162,11 @@
                     <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs bg-purple-950/40 border border-purple-500/30 rounded-xl p-3.5">
                         <div class="flex items-center space-x-2 text-purple-300 font-mono">
                             <span class="px-2 py-0.5 rounded bg-purple-600/30 text-purple-300 font-bold border border-purple-400/30">MM2</span>
-                            <span data-i18n="mm2_desc">Скрипт создан специально для Murder Mystery 2</span>
+                            <span>Скрипт создан специально для Murder Mystery 2</span>
                         </div>
                         <div class="flex items-center space-x-2 text-emerald-300 font-mono">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            <span data-i18n="ai_desc">Сделано с ИИ / Вайбкодинг</span>
+                            <span>Сделано с ИИ / Вайбкодинг</span>
                         </div>
                     </div>
                 </div>
@@ -183,7 +182,7 @@
                         </div>
                         <button onclick="copyScript(2)" id="copyBtn2" class="neon-btn px-4 py-2 rounded-lg text-xs font-semibold text-white flex items-center space-x-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-                            <span id="copyText2" data-i18n="copy_btn">Копировать скрипт</span>
+                            <span id="copyText2">Копировать скрипт</span>
                         </button>
                     </div>
                     
@@ -194,11 +193,11 @@
                     <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs bg-blue-950/40 border border-blue-500/30 rounded-xl p-3.5">
                         <div class="flex items-center space-x-2 text-blue-300 font-mono">
                             <span class="px-2 py-0.5 rounded bg-blue-600/30 text-blue-300 font-bold border border-blue-400/30">Gento Demo</span>
-                            <span data-i18n="demo_desc">Демо версия скрипта для MM2</span>
+                            <span>Демо версия скрипта для MM2</span>
                         </div>
                         <div class="flex items-center space-x-2 text-emerald-300 font-mono">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            <span data-i18n="ai_desc">Сделано с ИИ / Вайбкодинг</span>
+                            <span>Сделано с ИИ / Вайбкодинг</span>
                         </div>
                     </div>
                 </div>
@@ -206,7 +205,7 @@
         </div>
     </section>
 
-    <!-- Web Key System Section (2 Ads for 1 Key) -->
+    <!-- Web Key System Section (News Instead of Ads) -->
     <section id="keySystem" class="py-20 px-6 relative z-10">
         <div class="max-w-xl mx-auto">
             <div class="glass-panel p-8 rounded-3xl border border-purple-500/40 shadow-2xl relative overflow-hidden">
@@ -214,25 +213,25 @@
                 
                 <div class="text-center mb-6">
                     <span class="text-xs font-mono text-purple-400 uppercase tracking-widest px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30">Secure Access</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold mt-3 text-white">Получение Ключа (Gento Demo)</h2>
-                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Посмотрите 2 рекламы, чтобы разблокировать ключ доступа.</p>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-3 text-white">🔑 Получение Ключа (Gento Demo)</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Ознакомьтесь с новостями разработки (2 просмотра), чтобы получить ключ.</p>
                 </div>
 
                 <!-- Status / Counter -->
                 <div class="bg-[#05070c] p-4 rounded-xl border border-purple-900/40 mb-6 flex items-center justify-between">
                     <div>
-                        <div class="text-xs text-gray-400 font-mono">Просмотрено реклам:</div>
+                        <div class="text-xs text-gray-400 font-mono">Просмотрено новостей:</div>
                         <div id="adCounterText" class="text-lg font-bold text-purple-300 font-mono">0 / 2</div>
                     </div>
                     <div id="adStatusBadge" class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-mono border border-yellow-500/30">
-                        Нужно еще 2 рекламы
+                        Нужно прочитать 2 новости
                     </div>
                 </div>
 
                 <!-- Action Button -->
-                <button onclick="watchAd()" id="watchAdBtn" class="neon-btn w-full py-4 rounded-xl font-bold text-sm text-white shadow-lg mb-4 flex items-center justify-center space-x-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span id="watchBtnText">Смотреть рекламу (1/2)</span>
+                <button onclick="openNewsModal()" id="watchAdBtn" class="neon-btn w-full py-4 rounded-xl font-bold text-sm text-white shadow-lg mb-4 flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                    <span id="watchBtnText">Читать новость (1/2)</span>
                 </button>
 
                 <!-- Result Key Box -->
@@ -252,7 +251,7 @@
                 <!-- Discord Boost Note -->
                 <div class="pt-4 border-t border-gray-800 text-center">
                     <p class="text-xs text-gray-400 leading-relaxed">
-                        ⚡ <span class="text-purple-300 font-medium">Мастер-ключ</span> можно получить мгновенно, если вы сделаете буст в наш Discord-сервер: 
+                        ⚡ <span class="text-purple-300 font-medium">Мастер-ключ</span> можно получить мгновенно за буст Discord-сервера: 
                         <a href="https://discord.gg/EDzvZnf6VJ" target="_blank" class="text-blue-400 underline hover:text-blue-300">https://discord.gg/EDzvZnf6VJ</a>
                     </p>
                 </div>
@@ -260,24 +259,38 @@
         </div>
     </section>
 
+    <!-- NEWS POPUP MODAL (Instead of Ads) -->
+    <div id="newsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-panel p-8 rounded-2xl max-w-lg w-full border border-purple-500/50 shadow-2xl relative text-center">
+            <span class="text-xs font-mono text-purple-400 uppercase tracking-widest px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30">📢 Новость разработки (#<span id="newsNumber">1</span>/2)</span>
+            <h3 id="newsTitle" class="text-2xl font-bold mt-4 mb-3 text-white">Статус обновлений читов</h3>
+            <p id="newsContent" class="text-sm text-gray-300 leading-relaxed mb-8 bg-[#05070c] p-5 rounded-xl border border-purple-900/30 font-mono">
+                Я могу не успевать обновлять чит из за что я болею и из за учебы так что могу завтра или после завтра делать обновы если я не успел
+            </p>
+            <button onclick="confirmReadNews()" class="neon-btn w-full py-3.5 rounded-xl font-bold text-sm text-white shadow-lg">
+                Понятно / Прочитано
+            </button>
+        </div>
+    </div>
+
     <!-- Dashboard Section -->
     <section id="dashboard" class="py-20 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="dash_title">Мониторинг Системы в Реальном Времени</h2>
-                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base" data-i18n="dash_subtitle">Телеметрия узлов и статус серверов GENTO HUB.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Мониторинг Системы в Реальном Времени</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base">Телеметрия узлов и статус серверов GENTO HUB.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="glass-panel p-6 rounded-2xl">
                     <h3 class="text-lg font-bold mb-4 flex items-center justify-between">
-                        <span data-i18n="dash_chart_title">Сетевой трафик / Нагрузка</span>
+                        <span>Сетевой трафик / Нагрузка</span>
                         <span class="text-xs text-green-400 font-mono px-2.5 py-1 rounded-full bg-green-900/30 border border-green-500/30">ONLINE</span>
                     </h3>
                     <div class="h-48 flex items-end space-x-2 pt-4" id="chartBars"></div>
                 </div>
                 <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold mb-4" data-i18n="dash_stats_title">Статистика узлов</h3>
+                        <h3 class="text-lg font-bold mb-4">Статистика узлов</h3>
                         <div class="space-y-4">
                             <div>
                                 <div class="flex justify-between text-sm mb-1">
@@ -312,24 +325,24 @@
     <section id="roadmap" class="py-20 px-6 relative z-10 bg-black/20">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="roadmap_title">Дорожная карта GENTO HUB</h2>
-                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base" data-i18n="roadmap_subtitle">Этапы развития платформы и новые функции.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Дорожная карта GENTO HUB</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base">Этапы развития платформы и новые функции.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="glass-panel p-6 rounded-2xl border-l-4 border-purple-500">
                     <span class="text-xs font-mono text-purple-400 font-bold">Q1 2026 — COMPLETED</span>
-                    <h3 class="text-lg font-bold mt-2 mb-2" data-i18n="rm_1_title">Запуск Core V3</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="rm_1_desc">Реархитектура кластеров и оптимизация задержки до sub-10ms.</p>
+                    <h3 class="text-lg font-bold mt-2 mb-2">Запуск Core V3</h3>
+                    <p class="text-gray-400 text-sm">Реархитектура кластеров и оптимизация задержки до sub-10ms.</p>
                 </div>
                 <div class="glass-panel p-6 rounded-2xl border-l-4 border-blue-500">
                     <span class="text-xs font-mono text-blue-400 font-bold">Q2 2026 — IN PROGRESS</span>
-                    <h3 class="text-lg font-bold mt-2 mb-2" data-i18n="rm_2_title">GENTO AI Studio</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="rm_2_desc">Конструктор пользовательских скриптов и нейросетевых агентов.</p>
+                    <h3 class="text-lg font-bold mt-2 mb-2">GENTO AI Studio</h3>
+                    <p class="text-gray-400 text-sm">Конструктор пользовательских скриптов и нейросетевых агентов.</p>
                 </div>
                 <div class="glass-panel p-6 rounded-2xl border-l-4 border-emerald-500">
                     <span class="text-xs font-mono text-emerald-400 font-bold">Q3 2026 — PLANNED</span>
-                    <h3 class="text-lg font-bold mt-2 mb-2" data-i18n="rm_3_title">Global Mesh Nodes</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="rm_3_desc">Расширение точек присутствия в Азии и Латинской Америке.</p>
+                    <h3 class="text-lg font-bold mt-2 mb-2">Global Mesh Nodes</h3>
+                    <p class="text-gray-400 text-sm">Расширение точек присутствия в Азии и Латинской Америке.</p>
                 </div>
             </div>
         </div>
@@ -344,7 +357,7 @@
             </div>
             <p class="text-xs text-gray-500 font-mono">© 2026 GENTO HUB Ecosystem. All rights reserved.</p>
             <div class="flex space-x-6 text-sm text-gray-400">
-                <a href="#" class="hover:text-purple-400 transition">Discord</a>
+                <a href="https://discord.gg/EDzvZnf6VJ" target="_blank" class="hover:text-purple-400 transition">Discord</a>
                 <a href="#" class="hover:text-purple-400 transition">GitHub</a>
                 <a href="#" class="hover:text-purple-400 transition">Telegram</a>
             </div>
@@ -358,17 +371,17 @@
             
             <!-- Login View -->
             <div id="adminLoginView">
-                <h3 class="text-2xl font-bold mb-2 text-purple-300" data-i18n="admin_login_title">Вход для Администратора</h3>
-                <p class="text-xs text-gray-400 mb-6" data-i18n="admin_login_subtitle">Введите пароль для доступа к панели.</p>
+                <h3 class="text-2xl font-bold mb-2 text-purple-300">Вход для Администратора</h3>
+                <p class="text-xs text-gray-400 mb-6">Введите пароль для доступа к панели.</p>
                 <input type="password" id="adminPasswordInput" placeholder="Пароль..." class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500 mb-4 font-mono">
-                <button onclick="handleAdminLogin()" class="neon-btn w-full py-3 rounded-xl font-bold text-sm text-white shadow-lg" data-i18n="admin_login_btn">Войти</button>
-                <p id="loginError" class="text-xs text-red-400 mt-3 text-center hidden" data-i18n="admin_login_error">Неверный пароль!</p>
+                <button onclick="handleAdminLogin()" class="neon-btn w-full py-3 rounded-xl font-bold text-sm text-white shadow-lg">Войти</button>
+                <p id="loginError" class="text-xs text-red-400 mt-3 text-center hidden">Неверный пароль!</p>
             </div>
 
             <!-- Editor View -->
             <div id="adminEditorView" class="hidden">
                 <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-xl font-bold text-purple-300" data-i18n="admin_editor_title">Панель Администратора</h3>
+                    <h3 class="text-xl font-bold text-purple-300">Панель Администратора</h3>
                     <span class="text-xs text-green-400 font-mono px-2 py-0.5 rounded bg-green-900/30">ONLINE</span>
                 </div>
                 
@@ -385,8 +398,8 @@
                 </div>
 
                 <div class="flex space-x-3">
-                    <button onclick="saveNewScripts()" class="neon-btn flex-1 py-3 rounded-xl font-bold text-xs text-white shadow-lg" data-i18n="admin_save_btn">Сохранить изменения</button>
-                    <button onclick="logoutAdmin()" class="px-4 py-3 rounded-xl bg-red-950/40 hover:bg-red-900/50 border border-red-500/30 text-xs text-red-300 font-semibold" data-i18n="admin_logout_btn">Выйти</button>
+                    <button onclick="saveNewScripts()" class="neon-btn flex-1 py-3 rounded-xl font-bold text-xs text-white shadow-lg">Сохранить изменения</button>
+                    <button onclick="logoutAdmin()" class="px-4 py-3 rounded-xl bg-red-950/40 hover:bg-red-900/50 border border-red-500/30 text-xs text-red-300 font-semibold">Выйти</button>
                 </div>
             </div>
         </div>
@@ -417,7 +430,7 @@
             "GENTO-654654", "GENTO-321321", "GENTO-852852", "GENTO-963963", "GENTO-741741"
         ];
 
-        // Web Ad & Key System State
+        // News & Key System State (2 News Reads Counter)
         let adWatchedCount = parseInt(localStorage.getItem('gento_ad_count') || '0');
         let lastKeyTime = parseInt(localStorage.getItem('gento_last_key_time') || '0');
         const cooldownTime = 24 * 60 * 60 * 1000; // 24 часа
@@ -433,17 +446,15 @@
             const keyResultBox = document.getElementById('keyResultBox');
             const cooldownWarning = document.getElementById('cooldownWarning');
 
-            // Проверяем кулдаун 24 часа
             if (lastKeyTime > 0 && timePassed < cooldownTime) {
                 const hoursLeft = Math.ceil((cooldownTime - timePassed) / (1000 * 60 * 60));
                 watchAdBtn.disabled = true;
                 watchAdBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                watchBtnText.innerText = 'Кулдаун активен';
+                watchBtnText.innerText = 'Кулдаун активен (24ч)';
                 statusBadge.innerText = `Доступ через ${hoursLeft}ч`;
                 statusBadge.className = 'px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-mono border border-orange-500/30';
                 cooldownWarning.classList.remove('hidden');
                 
-                // Показываем ранее полученный ключ
                 const savedKey = localStorage.getItem('gento_saved_key');
                 if (savedKey) {
                     keyResultBox.classList.remove('hidden');
@@ -452,22 +463,21 @@
                 return;
             }
 
-            // Если кулдаун прошел или первый запуск
             cooldownWarning.classList.add('hidden');
             watchAdBtn.disabled = false;
             watchAdBtn.classList.remove('opacity-50', 'cursor-not-allowed');
 
             if (adWatchedCount === 0) {
                 counterText.innerText = '0 / 2';
-                statusBadge.innerText = 'Нужно еще 2 рекламы';
+                statusBadge.innerText = 'Нужно прочитать 2 новости';
                 statusBadge.className = 'px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-mono border border-yellow-500/30';
-                watchBtnText.innerText = 'Смотреть рекламу (1/2)';
+                watchBtnText.innerText = 'Читать новость (1/2)';
                 keyResultBox.classList.add('hidden');
             } else if (adWatchedCount === 1) {
                 counterText.innerText = '1 / 2';
-                statusBadge.innerText = 'Осталась 1 реклама!';
+                statusBadge.innerText = 'Осталась 1 новость!';
                 statusBadge.className = 'px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-mono border border-blue-500/30';
-                watchBtnText.innerText = 'Смотреть рекламу (2/2)';
+                watchBtnText.innerText = 'Читать новость (2/2)';
                 keyResultBox.classList.add('hidden');
             } else if (adWatchedCount >= 2) {
                 counterText.innerText = '2 / 2 (Готово)';
@@ -477,7 +487,6 @@
                 watchAdBtn.disabled = true;
                 watchAdBtn.classList.add('opacity-50', 'cursor-not-allowed');
 
-                // Генерация случайного ключа
                 let generatedKey = localStorage.getItem('gento_saved_key');
                 if (!generatedKey) {
                     generatedKey = VALID_KEYS[Math.floor(Math.random() * VALID_KEYS.length)];
@@ -491,30 +500,41 @@
             }
         }
 
-        function watchAd() {
+        function openNewsModal() {
             if (adWatchedCount < 2) {
-                const watchAdBtn = document.getElementById('watchAdBtn');
-                const watchBtnText = document.getElementById('watchBtnText');
-                
-                watchAdBtn.disabled = true;
-                watchBtnText.innerText = 'Симуляция просмотра рекламы...';
+                const modal = document.getElementById('newsModal');
+                const newsNumber = document.getElementById('newsNumber');
+                const newsTitle = document.getElementById('newsTitle');
+                const newsContent = document.getElementById('newsContent');
 
-                setTimeout(() => {
-                    adWatchedCount++;
-                    localStorage.setItem('gento_ad_count', adWatchedCount);
-                    updateAdSystemUI();
-                }, 2500); // 2.5 секунды симуляция просмотра
+                newsNumber.innerText = adWatchedCount + 1;
+
+                if (adWatchedCount === 0) {
+                    newsTitle.innerText = "Важное обращение к игрокам";
+                    newsContent.innerText = "Я могу не успевать обновлять чит из за что я болею и из за учебы так что могу завтра или после завтра делать обновы если я не успел";
+                } else if (adWatchedCount === 1) {
+                    newsTitle.innerText = "Срочные новости хаба";
+                    newsContent.innerText = "артем какашка";
+                }
+
+                modal.classList.remove('hidden');
             }
+        }
+
+        function confirmReadNews() {
+            document.getElementById('newsModal').classList.add('hidden');
+            adWatchedCount++;
+            localStorage.setItem('gento_ad_count', adWatchedCount);
+            updateAdSystemUI();
         }
 
         function copyGeneratedKey() {
             const keyInput = document.getElementById('generatedKeyInput');
             keyInput.select();
             navigator.clipboard.writeText(keyInput.value);
-            alert(currentLang === 'ru' ? 'Ключ скопирован в буфер обмена!' : 'Key copied to clipboard!');
+            alert('Ключ скопирован в буфер обмена!');
         }
 
-        // Инициализация при загрузке
         updateAdSystemUI();
 
         // Canvas Background Animation
@@ -567,19 +587,17 @@
         }
         animateCanvas();
 
-        // Copy Script Function
         function copyScript(id) {
             const codeToCopy = id === 1 ? script1 : script2;
             navigator.clipboard.writeText(codeToCopy);
             const copyText = document.getElementById(`copyText${id}`);
             const originalText = copyText.innerText;
-            copyText.innerText = currentLang === 'ru' ? 'Скопировано!' : 'Copied!';
+            copyText.innerText = 'Скопировано!';
             setTimeout(() => {
                 copyText.innerText = originalText;
             }, 2000);
         }
 
-        // Admin Panel & Session Logic
         function openAdminModal() {
             document.getElementById('adminModal').classList.remove('hidden');
             const isAdminLoggedIn = sessionStorage.getItem('gento_admin_logged') === 'true';
@@ -635,7 +653,7 @@
                 document.getElementById('displayScriptCode1').innerText = script1;
                 document.getElementById('displayScriptCode2').innerText = script2;
                 
-                alert(currentLang === 'ru' ? 'Скрипты успешно обновлены!' : 'Scripts successfully updated!');
+                alert('Скрипты успешно обновлены!');
                 closeAdminModal();
             }
         }
@@ -662,119 +680,6 @@
             document.getElementById('memVal').innerText = mem + '%';
             document.getElementById('memBar').style.width = mem + '%';
         }, 3000);
-
-        // Multilingual support
-        let currentLang = 'ru';
-        const translations = {
-            ru: {
-                nav_services: "Сервисы",
-                nav_dashboard: "Дашборд",
-                nav_scripts: "Скрипты",
-                nav_keys: "Получить ключ",
-                nav_roadmap: "Дорожная карта",
-                nav_admin: "Админ",
-                nav_launch: "Запустить Hub",
-                hero_badge: "NEXT-GEN ECOSYSTEM & SCRIPT HUB V4.2",
-                hero_title_1: "Будущее цифровых решений и",
-                hero_title_2: "мощных скриптов",
-                hero_desc: "Передовая облачная экосистема, инструменты разработки нового поколения и защищенный хаб игровых скриптов в единой ультрасовременной среде.",
-                hero_btn_primary: "Перейти к скриптам",
-                hero_btn_secondary: "Получить ключ",
-                services_title: "Экосистема GENTO HUB",
-                services_subtitle: "Интегрированные модули для высокой производительности и автоматизации.",
-                srv_1_title: "GENTO Cloud Infrastructure",
-                srv_1_desc: "Высокопроизводительные серверные кластеры с мгновенным развертыванием и защитой от DDoS.",
-                srv_2_title: "AI Script Engine",
-                srv_2_desc: "Интеллектуальная система анализа кода, оптимизации сетевых запросов и генерации скриптов.",
-                srv_3_title: "Secure Execution Hub",
-                srv_3_desc: "Проверенные скрипты для Roblox и других платформ с ежедневными обновлениями и обходом багов.",
-                scripts_main_title: "Игровой Скрипт Хаб (Roblox / MM2)",
-                scripts_main_subtitle: "Мгновенный запуск скриптов одной строкой.",
-                copy_btn: "Копировать скрипт",
-                mm2_desc: "Скрипт создан специально для Murder Mystery 2",
-                demo_desc: "Демо версия скрипта для MM2",
-                ai_desc: "Сделано с ИИ / Вайбкодинг",
-                dash_title: "Мониторинг Системы в Реальном Времени",
-                dash_subtitle: "Телеметрия узлов и статус серверов GENTO HUB.",
-                dash_chart_title: "Сетевой трафик / Нагрузка",
-                dash_stats_title: "Статистика узлов",
-                roadmap_title: "Дорожная карта GENTO HUB",
-                roadmap_subtitle: "Этапы развития платформы и новые функции.",
-                rm_1_title: "Запуск Core V3",
-                rm_1_desc: "Реархитектура кластеров и оптимизация задержки до sub-10ms.",
-                rm_2_title: "GENTO AI Studio",
-                rm_2_desc: "Конструктор пользовательских скриптов и нейросетевых агентов.",
-                rm_3_title: "Global Mesh Nodes",
-                rm_3_desc: "Расширение точек присутствия в Азии и Латинской Америке.",
-                admin_login_title: "Вход для Администратора",
-                admin_login_subtitle: "Введите пароль для доступа к панели.",
-                admin_login_btn: "Войти",
-                admin_login_error: "Неверный пароль!",
-                admin_editor_title: "Панель Администратора",
-                admin_save_btn: "Сохранить изменения",
-                admin_logout_btn: "Выйти"
-            },
-            en: {
-                nav_services: "Services",
-                nav_dashboard: "Dashboard",
-                nav_scripts: "Scripts",
-                nav_keys: "Get Key",
-                nav_roadmap: "Roadmap",
-                nav_admin: "Admin",
-                nav_launch: "Launch Hub",
-                hero_badge: "NEXT-GEN ECOSYSTEM & SCRIPT HUB V4.2",
-                hero_title_1: "The Future of Digital Solutions &",
-                hero_title_2: "Powerful Scripts",
-                hero_desc: "Advanced cloud ecosystem, next-generation development tools, and secure game script hub in a single ultramodern environment.",
-                hero_btn_primary: "Explore Scripts",
-                hero_btn_secondary: "Get Key",
-                services_title: "GENTO HUB Ecosystem",
-                services_subtitle: "Integrated modules for high performance and automation.",
-                srv_1_title: "GENTO Cloud Infrastructure",
-                srv_1_desc: "High-performance server clusters with instant deployment and DDoS protection.",
-                srv_2_title: "AI Script Engine",
-                srv_2_desc: "Intelligent code analysis system, network request optimization, and script generation.",
-                srv_3_title: "Secure Execution Hub",
-                srv_3_desc: "Verified scripts for Roblox and other platforms with daily updates and bug bypasses.",
-                scripts_main_title: "Game Script Hub (Roblox / MM2)",
-                scripts_main_subtitle: "Instant script execution with a single line.",
-                copy_btn: "Copy Script",
-                mm2_desc: "Script created specifically for Murder Mystery 2",
-                demo_desc: "Demo version of the script for MM2",
-                ai_desc: "Made with AI / Vibe Coding",
-                dash_title: "Real-Time System Monitoring",
-                dash_subtitle: "Node telemetry and GENTO HUB server status.",
-                dash_chart_title: "Network Traffic / Load",
-                dash_stats_title: "Node Statistics",
-                roadmap_title: "GENTO HUB Roadmap",
-                roadmap_subtitle: "Platform development stages and upcoming features.",
-                rm_1_title: "Core V3 Launch",
-                rm_1_desc: "Cluster re-architecture and sub-10ms latency optimization.",
-                rm_2_title: "GENTO AI Studio",
-                rm_2_desc: "Custom script builder and neural network agents constructor.",
-                rm_3_title: "Global Mesh Nodes",
-                rm_3_desc: "Expanding points of presence in Asia and Latin America.",
-                admin_login_title: "Admin Login",
-                admin_login_subtitle: "Enter password to access panel.",
-                admin_login_btn: "Login",
-                admin_login_error: "Incorrect password!",
-                admin_editor_title: "Admin Panel",
-                admin_save_btn: "Save Changes",
-                admin_logout_btn: "Logout"
-            }
-        };
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ru' ? 'en' : 'ru';
-            document.getElementById('langBtn').innerText = currentLang.toUpperCase() + ' / ' + (currentLang === 'ru' ? 'EN' : 'RU');
-            
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
-                    el.innerText = translations[currentLang][key];
-                }
-            });
-        }
     </script>
 </body>
 </html>
