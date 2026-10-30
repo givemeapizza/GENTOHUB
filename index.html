@@ -98,7 +98,7 @@
                     Перейти к скриптам
                 </a>
                 <a href="#keySystem" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base glass-panel hover:bg-purple-900/20 transition text-center text-purple-300 border border-purple-500/40">
-                    🔑 Получить ключ (Новости вместо рекламы)
+                    🔑 Получить ключ (Таймер 100 сек)
                 </a>
             </div>
         </div>
@@ -147,7 +147,7 @@
                             <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
                             <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
                             <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
-                            <span class="text-sm font-mono text-purple-300 ml-2">gento_mm2_loader.lua</span>
+                            <span class="text-sm font-mono text-purple-300 ml-2">gento_hub_full.lua</span>
                         </div>
                         <button onclick="copyScript(1)" id="copyBtn1" class="neon-btn px-4 py-2 rounded-lg text-xs font-semibold text-white flex items-center space-x-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
@@ -156,13 +156,13 @@
                     </div>
                     
                     <div class="bg-[#05070c] p-6 rounded-xl overflow-x-auto border border-purple-900/30 shadow-inner">
-                        <pre class="text-sm font-mono text-emerald-400 leading-relaxed" id="displayScriptCode1">loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/feb565f0a68222c6082c6048f78e6997/raw/9eb17d9800dc74772786d7238a2b50a8d1df2131/GentoHub%2520Full"))()</pre>
+                        <pre class="text-sm font-mono text-emerald-400 leading-relaxed" id="displayScriptCode1">loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/feb565f0a68222c6082c6048f78e6997/raw/a8a493e5c82c83af277ca5be096b5bae4200060a/GentoHub%2520Full"))()</pre>
                     </div>
                     
                     <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs bg-purple-950/40 border border-purple-500/30 rounded-xl p-3.5">
                         <div class="flex items-center space-x-2 text-purple-300 font-mono">
-                            <span class="px-2 py-0.5 rounded bg-purple-600/30 text-purple-300 font-bold border border-purple-400/30">MM2</span>
-                            <span>Скрипт создан специально для Murder Mystery 2</span>
+                            <span class="px-2 py-0.5 rounded bg-purple-600/30 text-purple-300 font-bold border border-purple-400/30">Gento Hub</span>
+                            <span>Полная версия хаба (требует ключ)</span>
                         </div>
                         <div class="flex items-center space-x-2 text-emerald-300 font-mono">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
@@ -193,7 +193,7 @@
                     <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs bg-blue-950/40 border border-blue-500/30 rounded-xl p-3.5">
                         <div class="flex items-center space-x-2 text-blue-300 font-mono">
                             <span class="px-2 py-0.5 rounded bg-blue-600/30 text-blue-300 font-bold border border-blue-400/30">Gento Demo</span>
-                            <span>Демо версия скрипта для MM2</span>
+                            <span>Демо версия скрипта</span>
                         </div>
                         <div class="flex items-center space-x-2 text-emerald-300 font-mono">
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
@@ -205,38 +205,34 @@
         </div>
     </section>
 
-    <!-- Web Key System Section (News Instead of Ads) -->
+    <!-- Web Key System Section (100 Seconds Timer) -->
     <section id="keySystem" class="py-20 px-6 relative z-10">
         <div class="max-w-xl mx-auto">
             <div class="glass-panel p-8 rounded-3xl border border-purple-500/40 shadow-2xl relative overflow-hidden">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <div class="text-center mb-6">
-                    <span class="text-xs font-mono text-purple-400 uppercase tracking-widest px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30">Secure Access</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold mt-3 text-white">🔑 Получение Ключа (Gento Demo)</h2>
-                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Ознакомьтесь с новостями разработки (2 просмотра), чтобы получить ключ.</p>
+                    <span class="text-xs font-mono text-purple-400 uppercase tracking-widest px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30">Gento Hub Secure Access</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-3 text-white">🔑 Получение Ключа (100 Секунд)</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Не закрывайте и не уходите с этой вкладки 100 секунд, чтобы получить ключ.</p>
                 </div>
 
-                <!-- Status / Counter -->
-                <div class="bg-[#05070c] p-4 rounded-xl border border-purple-900/40 mb-6 flex items-center justify-between">
-                    <div>
-                        <div class="text-xs text-gray-400 font-mono">Просмотрено новостей:</div>
-                        <div id="adCounterText" class="text-lg font-bold text-purple-300 font-mono">0 / 2</div>
-                    </div>
-                    <div id="adStatusBadge" class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-mono border border-yellow-500/30">
-                        Нужно прочитать 2 новости
-                    </div>
+                <!-- Status / Timer Box -->
+                <div class="bg-[#05070c] p-4 rounded-xl border border-purple-900/40 mb-6 text-center">
+                    <div class="text-xs text-gray-400 font-mono mb-1">Статус ожидания:</div>
+                    <div id="timerDisplay" class="text-2xl font-bold text-purple-300 font-mono">Готово к запуску</div>
+                    <div id="tabWarning" class="text-xs text-yellow-400 mt-2 font-mono hidden">⚠️ Внимание: вы переключили вкладку! Таймер приостановлен.</div>
                 </div>
 
                 <!-- Action Button -->
-                <button onclick="openNewsModal()" id="watchAdBtn" class="neon-btn w-full py-4 rounded-xl font-bold text-sm text-white shadow-lg mb-4 flex items-center justify-center space-x-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-                    <span id="watchBtnText">Читать новость (1/2)</span>
+                <button onclick="startKeyTimer()" id="startTimerBtn" class="neon-btn w-full py-4 rounded-xl font-bold text-sm text-white shadow-lg mb-4 flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span id="timerBtnText">Запустить таймер (100 сек)</span>
                 </button>
 
                 <!-- Result Key Box -->
                 <div id="keyResultBox" class="hidden mb-4">
-                    <label class="block text-xs font-mono text-emerald-400 mb-1">Ваш ключ доступа:</label>
+                    <label class="block text-xs font-mono text-emerald-400 mb-1">Ваш ключ для Gento Hub:</label>
                     <div class="flex items-center space-x-2">
                         <input type="text" id="generatedKeyInput" readonly class="w-full bg-[#05070c] border border-emerald-500/50 rounded-xl px-4 py-3 text-sm text-emerald-300 font-mono focus:outline-none">
                         <button onclick="copyGeneratedKey()" class="px-4 py-3 bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-emerald-300 text-xs font-semibold rounded-xl transition">Копировать</button>
@@ -251,27 +247,13 @@
                 <!-- Discord Boost Note -->
                 <div class="pt-4 border-t border-gray-800 text-center">
                     <p class="text-xs text-gray-400 leading-relaxed">
-                        ⚡ <span class="text-purple-300 font-medium">Мастер-ключ</span> можно получить мгновенно за буст Discord-сервера: 
+                        ⚡ <span class="text-purple-300 font-medium">Мастер-ключ</span> доступен мгновенно за буст Discord-сервера: 
                         <a href="https://discord.gg/EDzvZnf6VJ" target="_blank" class="text-blue-400 underline hover:text-blue-300">https://discord.gg/EDzvZnf6VJ</a>
                     </p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- NEWS POPUP MODAL (Instead of Ads) -->
-    <div id="newsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel p-8 rounded-2xl max-w-lg w-full border border-purple-500/50 shadow-2xl relative text-center">
-            <span class="text-xs font-mono text-purple-400 uppercase tracking-widest px-3 py-1 rounded-full bg-purple-950/60 border border-purple-500/30">📢 Новость разработки (#<span id="newsNumber">1</span>/2)</span>
-            <h3 id="newsTitle" class="text-2xl font-bold mt-4 mb-3 text-white">Статус обновлений читов</h3>
-            <p id="newsContent" class="text-sm text-gray-300 leading-relaxed mb-8 bg-[#05070c] p-5 rounded-xl border border-purple-900/30 font-mono">
-                Я могу не успевать обновлять чит из за что я болею и из за учебы так что могу завтра или после завтра делать обновы если я не успел
-            </p>
-            <button onclick="confirmReadNews()" class="neon-btn w-full py-3.5 rounded-xl font-bold text-sm text-white shadow-lg">
-                Понятно / Прочитано
-            </button>
-        </div>
-    </div>
 
     <!-- Dashboard Section -->
     <section id="dashboard" class="py-20 px-6 relative z-10">
@@ -387,7 +369,7 @@
                 
                 <!-- Script 1 Edit -->
                 <div class="mb-4">
-                    <label class="block text-xs font-mono text-purple-300 mb-1">Скрипт 1 (GENTO Full Hub):</label>
+                    <label class="block text-xs font-mono text-purple-300 mb-1">Скрипт 1 (GENTO Hub Full):</label>
                     <textarea id="scriptTextarea1" rows="3" class="w-full bg-[#05070c] border border-purple-900/50 rounded-xl p-3 text-xs text-purple-300 font-mono focus:outline-none focus:border-purple-500 resize-none"></textarea>
                 </div>
 
@@ -408,134 +390,113 @@
     <!-- JavaScript -->
     <script>
         // Default Scripts
-        let script1 = localStorage.getItem('gento_custom_script_1') || 'loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/feb565f0a68222c6082c6048f78e6997/raw/9eb17d9800dc74772786d7238a2b50a8d1df2131/GentoHub%2520Full"))()';
+        let script1 = localStorage.getItem('gento_custom_script_1') || 'loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/feb565f0a68222c6082c6048f78e6997/raw/a8a493e5c82c83af277ca5be096b5bae4200060a/GentoHub%2520Full"))()';
         let script2 = localStorage.getItem('gento_custom_script_2') || 'loadstring(game:HttpGet("https://gist.githubusercontent.com/givemeapizza/bf6879967cb536a3b19bbe7506bf4dea/raw/09057f5ee09d51f58dc9d52b081c303b7089686f/Gento%2520DEMO"))()';
 
         document.getElementById('displayScriptCode1').innerText = script1;
         document.getElementById('displayScriptCode2').innerText = script2;
 
-        // Valid Keys List (60 keys)
-        const VALID_KEYS = [
-            "GENTO-482910", "GENTO-159384", "GENTO-732045", "GENTO-918234", "GENTO-342156",
-            "GENTO-654789", "GENTO-123987", "GENTO-876543", "GENTO-543210", "GENTO-998877",
-            "GENTO-112233", "GENTO-445566", "GENTO-778899", "GENTO-102938", "GENTO-564738",
-            "GENTO-293847", "GENTO-847362", "GENTO-384756", "GENTO-748392", "GENTO-918273",
-            "GENTO-654321", "GENTO-135792", "GENTO-246813", "GENTO-357924", "GENTO-468135",
-            "GENTO-579246", "GENTO-681357", "GENTO-792468", "GENTO-813579", "GENTO-924681",
+        // Valid Gento Hub Keys List
+        const VALID_HUB_KEYS = [
+            "GENTO-HUB-482910", "GENTO-HUB-159384", "GENTO-HUB-732045", "GENTO-HUB-918234", "GENTO-HUB-342156",
+            "GENTO-HUB-654789", "GENTO-HUB-123987", "GENTO-HUB-876543", "GENTO-HUB-543210", "GENTO-HUB-998877",
+            "GENTO-HUB-112233", "GENTO-HUB-445566", "GENTO-HUB-778899", "GENTO-HUB-102938", "GENTO-HUB-564738",
+            "GENTO-HUB-293847", "GENTO-HUB-847362", "GENTO-HUB-384756", "GENTO-HUB-748392", "GENTO-HUB-918273",
+            "GENTO-HUB-654321", "GENTO-HUB-135792", "GENTO-HUB-246813", "GENTO-HUB-357924", "GENTO-HUB-468135",
+            "GENTO-HUB-579246", "GENTO-HUB-681357", "GENTO-792468", "GENTO-813579", "GENTO-924681",
             "GENTO-147258", "GENTO-369147", "GENTO-258369", "GENTO-741852", "GENTO-963258",
             "GENTO-159753", "GENTO-357159", "GENTO-852963", "GENTO-951753", "GENTO-456123",
             "GENTO-789123", "GENTO-321654", "GENTO-987654", "GENTO-111222", "GENTO-333444",
-            "GENTO-555666", "GENTO-777888", "GENTO-999000", "GENTO-123123", "GENTO-456456",
-            "GENTO-789789", "GENTO-147147", "GENTO-258258", "GENTO-369369", "GENTO-987987",
-            "GENTO-654654", "GENTO-321321", "GENTO-852852", "GENTO-963963", "GENTO-741741"
+            "GENTO-555666", "GENTO-777888", "GENTO-999000", "GENTO-123123"
         ];
 
-        // News & Key System State (2 News Reads Counter)
-        let adWatchedCount = parseInt(localStorage.getItem('gento_ad_count') || '0');
-        let lastKeyTime = parseInt(localStorage.getItem('gento_last_key_time') || '0');
+        // Timer & Cooldown State
+        let timerInterval = null;
+        let timeLeft = 100;
+        let lastKeyTime = parseInt(localStorage.getItem('gento_hub_last_time') || '0');
         const cooldownTime = 24 * 60 * 60 * 1000; // 24 часа
 
-        function updateAdSystemUI() {
+        function checkCooldownUI() {
             const now = new Date().getTime();
             const timePassed = now - lastKeyTime;
-            
-            const counterText = document.getElementById('adCounterText');
-            const statusBadge = document.getElementById('adStatusBadge');
-            const watchBtnText = document.getElementById('watchBtnText');
-            const watchAdBtn = document.getElementById('watchAdBtn');
+            const timerDisplay = document.getElementById('timerDisplay');
+            const startTimerBtn = document.getElementById('startTimerBtn');
+            const timerBtnText = document.getElementById('timerBtnText');
             const keyResultBox = document.getElementById('keyResultBox');
             const cooldownWarning = document.getElementById('cooldownWarning');
 
             if (lastKeyTime > 0 && timePassed < cooldownTime) {
                 const hoursLeft = Math.ceil((cooldownTime - timePassed) / (1000 * 60 * 60));
-                watchAdBtn.disabled = true;
-                watchAdBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                watchBtnText.innerText = 'Кулдаун активен (24ч)';
-                statusBadge.innerText = `Доступ через ${hoursLeft}ч`;
-                statusBadge.className = 'px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-mono border border-orange-500/30';
+                startTimerBtn.disabled = true;
+                startTimerBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                timerBtnText.innerText = 'Кулдаун активен';
+                timerDisplay.innerText = `Доступ через ${hoursLeft} ч.`;
                 cooldownWarning.classList.remove('hidden');
-                
-                const savedKey = localStorage.getItem('gento_saved_key');
+
+                const savedKey = localStorage.getItem('gento_hub_saved_key');
                 if (savedKey) {
                     keyResultBox.classList.remove('hidden');
                     document.getElementById('generatedKeyInput').value = savedKey;
                 }
-                return;
+                return true;
             }
-
-            cooldownWarning.classList.add('hidden');
-            watchAdBtn.disabled = false;
-            watchAdBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-
-            if (adWatchedCount === 0) {
-                counterText.innerText = '0 / 2';
-                statusBadge.innerText = 'Нужно прочитать 2 новости';
-                statusBadge.className = 'px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-300 text-xs font-mono border border-yellow-500/30';
-                watchBtnText.innerText = 'Читать новость (1/2)';
-                keyResultBox.classList.add('hidden');
-            } else if (adWatchedCount === 1) {
-                counterText.innerText = '1 / 2';
-                statusBadge.innerText = 'Осталась 1 новость!';
-                statusBadge.className = 'px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-mono border border-blue-500/30';
-                watchBtnText.innerText = 'Читать новость (2/2)';
-                keyResultBox.classList.add('hidden');
-            } else if (adWatchedCount >= 2) {
-                counterText.innerText = '2 / 2 (Готово)';
-                statusBadge.innerText = 'Ключ разблокирован!';
-                statusBadge.className = 'px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-xs font-mono border border-green-500/30';
-                watchBtnText.innerText = 'Ключ получен';
-                watchAdBtn.disabled = true;
-                watchAdBtn.classList.add('opacity-50', 'cursor-not-allowed');
-
-                let generatedKey = localStorage.getItem('gento_saved_key');
-                if (!generatedKey) {
-                    generatedKey = VALID_KEYS[Math.floor(Math.random() * VALID_KEYS.length)];
-                    localStorage.setItem('gento_saved_key', generatedKey);
-                    lastKeyTime = new Date().getTime();
-                    localStorage.setItem('gento_last_key_time', lastKeyTime);
-                }
-
-                keyResultBox.classList.remove('hidden');
-                document.getElementById('generatedKeyInput').value = generatedKey;
-            }
+            return false;
         }
 
-        function openNewsModal() {
-            if (adWatchedCount < 2) {
-                const modal = document.getElementById('newsModal');
-                const newsNumber = document.getElementById('newsNumber');
-                const newsTitle = document.getElementById('newsTitle');
-                const newsContent = document.getElementById('newsContent');
+        function startKeyTimer() {
+            if (checkCooldownUI()) return;
 
-                newsNumber.innerText = adWatchedCount + 1;
+            const startTimerBtn = document.getElementById('startTimerBtn');
+            const timerBtnText = document.getElementById('timerBtnText');
+            const timerDisplay = document.getElementById('timerDisplay');
+            const tabWarning = document.getElementById('tabWarning');
 
-                if (adWatchedCount === 0) {
-                    newsTitle.innerText = "Важное обращение к игрокам";
-                    newsContent.innerText = "Я могу не успевать обновлять чит из за что я болею и из за учебы так что могу завтра или после завтра делать обновы если я не успел";
-                } else if (adWatchedCount === 1) {
-                    newsTitle.innerText = "Срочные новости хаба";
-                    newsContent.innerText = "артем какашка";
+            startTimerBtn.disabled = true;
+            startTimerBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            timeLeft = 100;
+
+            timerInterval = setInterval(() => {
+                // Если пользователь свернул или ушел с вкладки — приостанавливаем отсчет
+                if (document.hidden) {
+                    tabWarning.classList.remove('hidden');
+                    return; // Таймер не идет, пока вкладка неактивна
+                } else {
+                    tabWarning.classList.add('hidden');
                 }
 
-                modal.classList.remove('hidden');
-            }
-        }
+                timeLeft--;
+                timerDisplay.innerText = `Осталось: ${timeLeft} сек.`;
+                timerBtnText.innerText = `Ожидание... (${timeLeft}с)`;
 
-        function confirmReadNews() {
-            document.getElementById('newsModal').classList.add('hidden');
-            adWatchedCount++;
-            localStorage.setItem('gento_ad_count', adWatchedCount);
-            updateAdSystemUI();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    
+                    // Выдаем рандомный ключ
+                    const randomKey = VALID_HUB_KEYS[Math.floor(Math.random() * VALID_HUB_KEYS.length)];
+                    localStorage.setItem('gento_hub_saved_key', randomKey);
+                    
+                    const currentTime = new Date().getTime();
+                    localStorage.setItem('gento_hub_last_time', currentTime);
+                    lastKeyTime = currentTime;
+
+                    timerDisplay.innerText = "Ключ успешно получен!";
+                    startTimerBtn.classList.add('hidden');
+                    
+                    document.getElementById('keyResultBox').classList.remove('hidden');
+                    document.getElementById('generatedKeyInput').value = randomKey;
+                }
+            }, 1000);
         }
 
         function copyGeneratedKey() {
             const keyInput = document.getElementById('generatedKeyInput');
             keyInput.select();
             navigator.clipboard.writeText(keyInput.value);
-            alert('Ключ скопирован в буфер обмена!');
+            alert('Ключ Gento Hub скопирован в буфер обмена!');
         }
 
-        updateAdSystemUI();
+        // Инициализация при загрузке
+        checkCooldownUI();
 
         // Canvas Background Animation
         const canvas = document.getElementById('bgCanvas');
